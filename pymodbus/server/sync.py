@@ -39,6 +39,7 @@ class ModbusBaseRequestHandler(socketserver.BaseRequestHandler):
         ''' Callback for when a client connects
         '''
         _logger.debug("Client Connected [%s:%s]" % self.client_address)
+        #import pdb; pdb.set_trace()
         self.running = True
         self.framer = self.server.framer(self.server.decoder)
         self.server.threads.append(self)
