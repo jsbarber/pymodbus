@@ -223,6 +223,10 @@ class ModbusTcpServer(socketserver.ThreadingTCPServer):
     server context instance.
     '''
 
+    def server_bind(self):
+        self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.socket.bind(self.server_address)
+
     def __init__(self, context, framer=None, identity=None, address=None, handler=None, **kwargs):
         ''' Overloaded initializer for the socket server
 
