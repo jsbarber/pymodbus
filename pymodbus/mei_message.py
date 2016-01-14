@@ -150,7 +150,7 @@ class ReadDeviceInformationResponse(ModbusResponse):
         while count < len(data):
             object_id, object_length = struct.unpack('>BB', data[count:count+2])
             count += object_length + 2
-            self.information[object_id] = data[count-object_length:count]
+            self.information[object_id] = data[count-object_length:count].decode()
 
     def __str__(self):
         ''' Builds a representation of the response

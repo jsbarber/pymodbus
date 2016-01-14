@@ -8,6 +8,6 @@ from pymodbus.datastore.context import ModbusServerContext
 # Exported symbols
 #---------------------------------------------------------------------------#
 __all__ = [
-    "ModbusSequentialDataBlock", "ModbusSparseDataBlock", "BaseModbusDataBlock"
+    "ModbusSequentialDataBlock", "ModbusSparseDataBlock", "BaseModbusDataBlock",
     "ModbusSlaveContext", "ModbusServerContext",
 ]
